@@ -1,5 +1,6 @@
 # moonriver-collator-failover-micro
 Failover service for Moonriver Collators based on 1 microservice
+https://blog.dvn.cy/automatic-validator-failover-with-one-microservice-7a0a4064c644
 
 Moonriver Failover - step by step
 0. Create an AuthorMapping proxy account
