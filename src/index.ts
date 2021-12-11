@@ -84,7 +84,7 @@ exports.handler = async () => {
           nodeState[data.networkID].block = data.block
           nodeState[data.networkID].nodeName = data.nodeName
         }
-        lastAddedNodeTime = +new Date
+        lastAddedNodeTime = +new Date()
         nodeCount++
       })
       // wait until there is no more data for at least two seconds, then resolve
