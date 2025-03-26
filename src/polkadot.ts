@@ -43,8 +43,6 @@ export async function providePolkadotApi() {
     }
 }
 
-//0xa3D45cCA727b3c8E6e609169E59dbac6EC26cD1B
-
 export async function performFailover(api, proxySecretKey, collatorAccount, oldSessionKey, newSessionKey) {
     console.log(`Performing failover for collator ${collatorAccount} from session key ${oldSessionKey} to ${newSessionKey}`)
     if (testingMode) {
