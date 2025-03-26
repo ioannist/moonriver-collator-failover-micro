@@ -19,9 +19,7 @@ module.exports = {
     extensions: [ '.tsx', '.ts', '.js', '.json' ],
   },
   target: 'node',
-  externals: [
-    'aws-sdk'
-  ],
+  externals: [ ],
   output: {
     path: OUT_DIR,
     filename: 'index.js',

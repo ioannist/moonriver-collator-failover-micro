@@ -25,7 +25,6 @@
     "noImplicitReturns": true,
     "noImplicitThis": true,
     // "strictNullChecks": true,
-    "suppressImplicitAnyIndexErrors": true,
     "resolveJsonModule": true,
     "noUnusedParameters": true,
     "strictPropertyInitialization": false

@@ -110,7 +110,12 @@ exports.handler = async () => {
 
     console.log('Identify which node is actively collating (associated session key) from chain')
     // Get author mappings
-    let authorMappings = await polkadotApi.query.authorMapping.mappingWithDeposit.multi(sessionKeys);
+    // Take only the first 32 bytes of each 64-byte session key
+    const truncatedSessionKeys = sessionKeys.map(key => {
+      // For 0x-prefixed hex strings representing 64 bytes, take only the first 32 bytes (0x + 64 chars)
+      return key.substring(0, 66);
+    });
+    let authorMappings = await polkadotApi.query.authorMapping.mappingWithDeposit.multi(truncatedSessionKeys);
     const accounts = authorMappings.map(c => c && c.toHuman() ? c.toHuman()['account'] : undefined)
     for (let i = 0; i < accounts.length; i++) {
       if (accounts[i]) {
@@ -138,7 +143,7 @@ exports.handler = async () => {
       }
     }
     if (!firstNonActiveHealthyNode) {
-      console.error('Could not find a healthy backup node')
+      console.error(`Could not find a healthy backup node. Current chain block height: ${chainBlockHeight}. Node blocks: ${Object.entries(nodeState).map(([id, node]) => `${node.nodeName || id}: ${node.block || 'unknown'}`).join(', ')}`)
       notify()
       return;
     }

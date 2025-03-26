@@ -91,7 +91,7 @@ export class Connection {
   }
 
   private pingId = 0;
-  private pingTimeout: NodeJS.Timer;
+  private pingTimeout: NodeJS.Timeout;
   private pingSent: Maybe<Types.Timestamp> = null;
 
   public handleDisconnect: VoidFunction = async () => {

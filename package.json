@@ -7,19 +7,19 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@polkadot/api": "6.10.3",
+    "@polkadot/api": "12.4.2",
     "aws-lambda": "^1.0.6",
-    "aws-sdk": "2.952.0",
-    "moonbeam-types-bundle": "2.0.1",
+    "aws-sdk": "^2.1692.0",
+    "@moonbeam-network/types-bundle": "1.0.2",
     "rxjs": "^7.4.0",
     "ws": "^8.2.2"
   },
   "devDependencies": {
-    "@types/node": "^16.9.1",
+    "@types/node": "^20.10.0",
     "@types/ws": "^7.4.7",
     "ts-loader": "^9.2.4",
     "typescript": "^4.3.5",
-    "webpack": "5.46.0",
+    "webpack": "^5.98.0",
     "webpack-cli": "^4.7.2",
     "zip-webpack-plugin": "4.0.1"
   },
