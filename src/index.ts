@@ -60,7 +60,7 @@ exports.handler = async () => {
       }
     }
 
-    console.log('Connect to moonriver network')
+    console.log('Connect to network')
     const polkadotApi = await providePolkadotApi();
     await polkadotApi.isReady;
     // Necessary hack to allow polkadotApi to finish its internal metadata loading
